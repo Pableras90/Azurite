@@ -123,11 +123,31 @@ namespace tour_of_heroes_api.Controllers
 
         // DELETE: api/Hero/5
         [HttpDelete("{id}")]
-        public IActionResult DeleteHero(int id)
-        {
-            _heroRepository.Delete(id);
+       public async Task<IActionResult> DeleteHero(int id)
+    {
+        var hero = _heroRepository.GetById(id);
+        _heroRepository.Delete(id);
+    
+         // Get the connection string from app settings
+         string connectionString = _configuration.GetConnectionString("AzureStorage");
 
-            return NoContent();
+         // Instantiate a QueueClient which will be used to create and manipulate the queue
+         var queueClient = new QueueClient(connectionString, "pics-to-delete");
+
+         // Create a queue
+         await queueClient.CreateIfNotExistsAsync();
+
+         // Create a dynamic object to hold the message
+         var message = new
+         {
+             heroName = hero.Name,
+             alterEgoName = hero.AlterEgo
+         };
+
+         // Send the message
+         await queueClient.SendMessageAsync(JsonSerializer.Serialize(message).ToString());
+
+         return NoContent();
         }
 
         // GET: api/hero/alteregopic/5

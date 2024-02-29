@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tour-of-heroes-api", "tour-of-heroes-api.csproj", "{38A6526D-A2E7-425E-8BCC-E1C1507F7F25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicsToDeleteProcessor", "PicsToDeleteProcessor\PicsToDeleteProcessor.csproj", "{89410310-9125-4B30-96A3-187E331DD959}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{38A6526D-A2E7-425E-8BCC-E1C1507F7F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38A6526D-A2E7-425E-8BCC-E1C1507F7F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38A6526D-A2E7-425E-8BCC-E1C1507F7F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89410310-9125-4B30-96A3-187E331DD959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89410310-9125-4B30-96A3-187E331DD959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89410310-9125-4B30-96A3-187E331DD959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89410310-9125-4B30-96A3-187E331DD959}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
